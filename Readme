@@ -1,0 +1,89 @@
+🎮 TeleportMod Creation Story - 3 Days of Hell
+What is this mod?
+A simple teleportation mod for Vintage Story. Open the menu, enter coordinates from the minimap - and teleport there. You can save favorite locations. Everything simple... or so I thought.
+
+📅 Day 1: "Fuck, this is easy!"
+Thought I'd make it in an hour. Got coordinates, got teleport, what could go wrong?
+Attempt 1:
+
+Enter 10 10 10
+Gets thrown to who knows where, minimap shows -511680 320 -511680
+WHAT THE FUCK???
+
+Turns out the game has two coordinate systems:
+
+What the minimap shows
+What the game uses internally
+
+And they're NOT THE SAME.
+Attempts 2-5:
+Tried different conversion coefficients:
+
+32 (doesn't work)
+51201 (total disaster)
+32768 (also shit)
+
+Each time teleported to the wrong place. Either 2 million blocks away, underground, or into complete void.
+Day 1 result: Nervously smoking. Mod didn't work.
+
+📅 Day 2: "FINALLY WORKS!... no, fuck"
+In the morning found a solution! Used one formula - and IT WORKED!
+Happily teleporting around the world. Everything's perfect!
+But then...
+Joined a server to test. Entered coordinates and...
+TELEPORTED TO +2 MILLION BLOCKS.
+I just sat there staring at the screen. How??? Why???
+Turns out each server/world has its own offset. What worked in singleplayer - didn't work on the server.
+Day 2 result: Wanted to quit everything. But already spent 2 days, gotta finish it.
+
+📅 Day 3: "I FUCKING BROKE IT!"
+Spent the whole day searching how to make it work EVERYWHERE.
+Tried automatic offset detection - doesn't work.
+Tried manual configuration - also some shit.
+Tried reading coordinates differently - again fuck all.
+And then found one thing in the game code - DefaultSpawnPosition.
+It's like the world's spawn point. And THE MINIMAP SHOWS COORDINATES RELATIVE TO IT!
+THERE IT IS, THE KEY TO EVERYTHING!
+Rewrote the code. Tested:
+
+✅ Singleplayer - works
+✅ Server - works
+✅ Another world - works
+
+FUCK YEAHHH! FINALLY!
+
+💀 What I went through:
+
+🔥 3 days of continuous debugging
+😤 7+ attempts at different solutions
+🤬 Hundreds of failed teleports
+☕ Lots of coffee and swearing
+😭 Almost quit several times
+🎉 But didn't give up!
+
+
+🎯 What came out in the end:
+A simple mod that:
+
+Works on any world/server automatically
+Teleports exactly where you need
+Lets you save favorite locations
+Has a clean menu without bullshit
+
+User only needs to:
+
+Open the mod
+Enter coordinates from minimap
+Press the button
+
+THAT'S IT. IT WORKS.
+
+💬 Advice for those who will make mods:
+If something doesn't work - don't give up. I fought with coordinates for 3 days that either worked or didn't. Wanted to quit many times. But finished it and now have a working mod.
+P.S. If your stuff also doesn't teleport where it should - first look for where the game stores spawn point. It saves lives 😅
+
+Author: (prescko) Me, who lost 3 days of life on coordinates
+Helped by: Claude AI (would've quit on day 2 without him)
+Version: 1.0 - finally fucking working
+For game: Vintage Story 1.21.6
+Enjoy the mod I gave a piece of my soul for 🎮🔥
